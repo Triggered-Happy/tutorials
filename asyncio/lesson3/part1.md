@@ -1,4 +1,4 @@
-# Asyncio - lesson 1.5
+# Asyncio - lesson 3.1
 
 ### Producer-Consumer model
 
@@ -86,7 +86,6 @@ Comments:
 2. Don't measure time with time.time(). Think why!
 3. Make sure you kill all open tasks when finished.
 4. Read about `asyncio.Queue` and think how to use it. Use `asyncio.Queue.join` and `asyncio.Queue.task_done()`
-
 
 Output for exmaple:
 

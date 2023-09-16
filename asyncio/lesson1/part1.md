@@ -1,10 +1,5 @@
 # Asyncio - lesson 1.1
 
-<p>
-Welcome to asyncio training!
-In this chapter we will talk about basic concepts behind asyncio.
-</p>
-
 Read (Until and not including `Async IO’s Roots in Generators`, `Async IO in Context` ): https://realpython.com/async-io-python/#toc
 
 Answer:
