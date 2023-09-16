@@ -1,4 +1,4 @@
-# Asyncio - lesson 1.6
+# Asyncio - lesson 1.5
 
 ### Producer-Consumer model
 

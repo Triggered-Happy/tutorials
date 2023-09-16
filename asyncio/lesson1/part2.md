@@ -2,6 +2,8 @@
 
 ### Echo server
 
+Read: https://docs.python.org/3/library/asyncio-task.html
+
 In this exercise we will write echo server.
 Such a server should start the server operation and listen to clients.
 

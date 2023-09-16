@@ -1,6 +1,6 @@
 # Asyncio - lesson 2.3
 
-Look at the following lines of code.
+The following code is one suggestion to improve the problem from the previous exercise. Look at the following lines of code:
 
 ```
 import time
