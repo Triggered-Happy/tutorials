@@ -2,9 +2,11 @@
 
 ### Producer-Consumer model
 
-In computing, the producer-consumer problem (also known as the bounded-buffer problem) is a family of problems described by Edsger W. Dijkstra since 1965.
+In computing, the producer-consumer problem (also known as the bounded-buffer problem)
+is a family of problems described by Edsger W. Dijkstra since 1965.
 
-A producer submits work to be done to a queue (or multiple producers even). In our example, we will work with one producer.
+A `producer` submits work to be done to a `queue` (or multiple producers even).
+In our example, we will work with <u>one producer</u>.
 
 ```
 class Producer:
@@ -20,11 +22,11 @@ class Producer:
         ...
 ```
 
-The queue (also called the work queue) holds all the work to be done. Every element in the queue is called 'work item'.
+The `queue` (also called the <u>work queue</u>) holds all the work to be done. Every element in the queue is called 'work item'.
 
-One or more consumers watch the queue. In our example, we will work with 25 consumers who are asynchronous running and looking for items on the queue.
+One or more consumers watch the queue. In our example, we will work with <u>25 consumers</u> who are asynchronous running and looking for items on the queue.
 If the work item is available in the queue, one of the consumers grabs the work item and performs the work.
-when one consumer does the work of one work item, he comes back and looks for the next item on the work.
+when one consumer finished the work, he comes back and looks for the next item on the work.
 
 ```
 class Cusumer:
@@ -40,7 +42,7 @@ class Cusumer:
 
 ```
 
-In order to control all the consumers\producer creations, handling task and more we recommands to work with:
+In order to control all the consumers\producer creations, handling task and more we recommands to work with `JobController` class:
 
 ```
 class JobController:
@@ -62,7 +64,7 @@ class JobController:
 
 Once the producer is done creating work items to the queue and the queue is empty we are done.
 
-All the work (the creation of tasks and their execution by consumers) is called a `job`. Each work task is called a `Task`. After performing a single task by the consumer, a callback must be performed. And after the end of the entire job, another callback must be made.
+All the work (the creation of tasks and their execution by consumers) is called a `job`. Each work task is called a `Task`. After performing a single task by the consumer, a `callback` must be performed. And after the end of the entire job, another callback must be made. Use `task_completed_callback_handler` and `job_completed_callback_handler`:
 
 ```
 def task_completed_callback_handler(job_id: str, callback_message: str) -> None:
@@ -73,6 +75,18 @@ def job_completed_callback_handler(job_id: str, callback_message: str) -> None:
     print(f"Job {job_id} completed: {callback_message}")
 
 ```
+
+Comments:
+
+1. Usful constant:
+   ```
+   NUM_WORKERS = 25
+   WORK_QUEUE_MAX_SIZE = 100
+   ```
+2. Don't measure time with time.time(). Think why!
+3. Make sure you kill all open tasks when finished.
+4. Read about `asyncio.Queue` and think how to use it. Use `asyncio.Queue.join` and `asyncio.Queue.task_done()`
+
 
 Output for exmaple:
 
@@ -90,14 +104,3 @@ Task job id=b13fecc3-5632-4abb-acf6-ef9c43afebc3: WorkTaskResult(id=UUID('ca5843
 Task job id=b13fecc3-5632-4abb-acf6-ef9c43afebc3: WorkTaskResult(id=UUID('8ab4ef54-9706-4cae-a36b-d15c93edabf8'), number=0, exec=<function sleep at 0x0000020D6C2AD940>, time_secs=0.8701545)
 Job b13fecc3-5632-4abb-acf6-ef9c43afebc3 completed: {'elapsed_secs': 0.8731075}
 ```
-
-Comments:
-
-1. Usful constant:
-   ```
-   NUM_WORKERS = 25
-   WORK_QUEUE_MAX_SIZE = 100
-   ```
-2. Don't measure time with time.time(). Think why!
-3. Make sure you kill all open tasks when finished.
-4. Read about `asyncio.Queue` and think how to use it. Use `asyncio.Queue.join` and `asyncio.Queue.task_done()`

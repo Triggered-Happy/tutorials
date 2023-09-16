@@ -27,6 +27,5 @@ async def main():
 
 ```
 
-Do the coroutines `create_file` run efficiently in terms of I\O bounds? Explain.
-
-Improve the code...
+1. Do the coroutines `create_file` run efficiently in terms of I\O bounds? Explain.
+2. Improve the code...
