@@ -2,6 +2,18 @@
 
 ### Producer-Consumer model
 
+#
+
+> Reading
+
+Read: https://docs.python.org/3/library/asyncio-queue.html
+
+Read: https://docs.python.org/3/library/asyncio-sync.html
+
+#
+
+> Exercise
+
 In computing, the producer-consumer problem (also known as the bounded-buffer problem)
 is a family of problems described by Edsger W. Dijkstra since 1965.
 
