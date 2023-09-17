@@ -1,8 +1,16 @@
 # Asyncio - lesson 1.1
 
+### Intro
+
+#
+
+> Reading
+
 Read (Until and not including `Async IO’s Roots in Generators`, `Async IO in Context` ): https://realpython.com/async-io-python/#toc
 
-Answer:
+#
+
+> Exercise
 
 Q1: What is asyncio designed for in Python?
 

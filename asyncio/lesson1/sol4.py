@@ -1,47 +1,28 @@
 import asyncio
-import time
+import logging
+
+active_clients = 0
 
 
-async def create_file(name) -> None:
-    with open(name, mode="w") as f:
-        for i in range(1_000):
-            f.write("hello async\n")
-            await asyncio.sleep(0.0000001)
-        print(f"File {name} is ready")
+async def client_connected_cb(reader, writer) -> None:
+    global active_clients
+    active_clients += 1
+    print(f"New client connected. Now there are {active_clients} clients")
+    line = await reader.readline()
+    writer.write(line)
+    await writer.drain()  # This is a flow control method that interacts with the underlying IO write buffer.
+    writer.close()
+    active_clients -= 1
+    print(f"Client left. Now there are {active_clients} clients")
 
 
-async def main():
-    start = time.perf_counter()
-    await create_file("one.txt")
-    await create_file("two.txt")
-    await create_file("three.txt")
-    end = time.perf_counter()
-    print(f"time: {end- start}")
+async def echo_server() -> None:
+    print("Starting a server")
+    server = await asyncio.start_server(
+        client_connected_cb, host="0.0.0.0", port="8080"
+    )
+    await server.serve_forever()
 
 
-async def main_imporoved() -> None:
-    start = time.perf_counter()
-
-    t1 = asyncio.create_task(create_file("one.txt"))
-    t2 = asyncio.create_task(create_file("two.txt"))
-    t3 = asyncio.create_task(create_file("three.txt"))
-
-    for t in [t1, t2, t3]:
-        await t
-
-    end = time.perf_counter()
-    print(f"time: {end- start}")
-
-
-async def main_imporoved_2() -> None:
-    start = time.perf_counter()
-
-    t1 = asyncio.create_task(create_file("one.txt"))
-    t2 = asyncio.create_task(create_file("two.txt"))
-    t3 = asyncio.create_task(create_file("three.txt"))
-    await asyncio.gather(*[t1, t2, t3])
-    end = time.perf_counter()
-    print(f"time: {end- start}")
-
-
-asyncio.run(main_imporoved_2())
+logging.basicConfig(level=logging.DEBUG)
+asyncio.run(echo_server(), debug=True)

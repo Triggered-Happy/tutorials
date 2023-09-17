@@ -1,5 +1,7 @@
 # Asyncio - lesson 2.3
 
+> Reading
+
 The following code is one suggestion to improve the problem from the previous exercise. Look at the following lines of code:
 
 ```
@@ -57,10 +59,12 @@ sched.call_soon(lambda: countup(20))
 sched.run()
 ```
 
+#
+
+> Exercise
+
 1. Without exectue this lines of code. Try to figure out what will be the output.
-<br>
-What is wired about these lines? (Hint, try to think about a priority queue also about edge cases)
+   <br>
+   What is wired about these lines? (Hint, try to think about a priority queue also about edge cases)
 
 2. Try changing the code to overcome the previous issue.
-
-The answer is in `sleep_scheduler.py`

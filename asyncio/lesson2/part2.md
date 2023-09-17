@@ -1,5 +1,7 @@
 # Asyncio - lesson 2.2
 
+> Reading
+
 Look at the following lines of code.
 
 ```
@@ -46,12 +48,10 @@ sched.run()
 
 ```
 
-<details>
-    <summary>
-    As you must have noticed, it is possible to start 2 tasks using this code, but they do not run efficiently (in terms of  I\O bound). Why? Explain how you found it?
-    </summary>
-    Basically, the time.sleep command is I\O bound and therefore blocks us from running other things. This prevents us from improving utilization and improving efficiency.
-</details>
-<br>
+#
 
-Try changing the code to overcome the previous issue.
+> Exercise
+
+1. As you must have noticed, it is possible to start 2 tasks using this code, but they do not run efficiently (in terms of I\O bound). Why? Explain how you found it?
+
+2. Try changing the code to overcome the previous issue. (Do not move on to the next exercise until you have finished solving!)

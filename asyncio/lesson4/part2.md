@@ -5,10 +5,16 @@
 Read about how to calculate pi approximately on Didi's Monte Carlo algorithm.
 Read about the algorithm and not about its implementation in Python.
 
+#
+
+> Exercise
+
 Albert is a nice guy, but likes the value of pie.
+
 In this exercise we will try to help Albert.
 Because the task of evaluating pi is computationally difficult,
-we will try to write a program that calculates the value of pi and then runs another coroutine.
+
+we will try to write a program that calculates the value of pi and then runs another coroutine. Help him complete it:
 
 ```
 import asyncio
@@ -20,21 +26,21 @@ async def sleep_task():
 
 
 async def estimate_pi(number_of_points: int = 1000000) -> float:
-    ...
+    # Write you code here
 
 
 # Function that returns a Future
 def create_future_task():
-    ...
+    # Write you code here
 
 async def main() -> None:
-    future = create_future_task()
+    # Write you code here
     print("Pi estimation in progress ...")
 
     coroutine_result = await sleep_task()
     print("Coroutine Result:", coroutine_result)
 
-    future_result = await future
+    # Write you code here
     print("Pi estimation:", future_result)
 
 

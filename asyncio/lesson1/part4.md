@@ -1,31 +1,10 @@
-# Asyncio - lesson 1.4
+# Asyncio - lesson 1.3
 
-### Tasks and coroutines
+### Echo server continue
 
-Run the following code:
+#
 
-```
-import asyncio
-import time
+> Exercise
 
-
-async def create_file(name) -> None:
-    with open(name, mode="w") as f:
-        for i in range(1_000):
-            f.write("hello async\n")
-            await asyncio.sleep(0.0000001)
-        print(f"File {name} is ready")
-
-
-async def main():
-    start = time.perf_counter()
-    await create_file("one.txt")
-    await create_file("two.txt")
-    await create_file("three.txt")
-    end = time.perf_counter()
-    print(f"time: {end- start}")
-
-```
-
-1. Do the coroutines `create_file` run efficiently in terms of I\O bounds? Explain.
-2. Improve the code...
+1. Now, add to the server the ability to print the number of clients every time a client connects and disconnects.
+2. Try to think about the implementation of the same piece of code with `threads` and the differences between the two (no need to implement the threads version).
