@@ -2,7 +2,15 @@
 
 ### Echo server
 
+#
+
+> Readings
+
 Read: https://docs.python.org/3/library/asyncio-task.html
+
+Read: https://docs.python.org/3/library/asyncio-stream.html
+
+#
 
 In this exercise you will write echo server.
 Such a server should start the server and listen to clients.
