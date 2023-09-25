@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "shaked-store"
+version = "0.1.0"
+description = ""
+authors = ["orsha <or@sha.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+fastapi = "^0.103.1"
+tinydb = "^4.8.0"
+uvicorn = "^0.23.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
