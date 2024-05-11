@@ -26,3 +26,6 @@ async def main():
 
 asyncio.run(main())
 ```
+
+**_Notes:_**
+* I mean, this is just the same as normal functions, It would end in a maximum recursion error, if that is the intended outcome
