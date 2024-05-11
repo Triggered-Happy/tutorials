@@ -68,3 +68,6 @@ sched.run()
    What is wired about these lines? (Hint, try to think about a priority queue also about edge cases)
 
 2. Try changing the code to overcome the previous issue.
+
+**_Notes:_**
+* I'm assuming this is based on an youtube video from an old pycon that explained how to implement your own asyncio event loop, if not I implore you to [look](https://www.youtube.com/watch?v=Y4Gt3Xjd7G8) at it
