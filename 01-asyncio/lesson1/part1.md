@@ -38,7 +38,7 @@ Q13: Can an event loop forcibly interrupt a coroutine that is currently executin
 
 Q14: Why is asyncio's approach well-suited for IO-bound code?
 
-** Notes **:
+**_Notes:_**
 * md formating
 * Some of these questions feel off, need further examination
 
