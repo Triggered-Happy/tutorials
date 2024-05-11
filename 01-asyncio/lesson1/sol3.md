@@ -9,3 +9,6 @@ Answer: The Global Interpreter Lock (GIL) restricts the execution of Python code
 Q3. Can asyncio tasks suffer from race conditions and deadlocks?
 
 Answer: Yes, both coroutines and threads can suffer from race conditions and deadlocks, depending on how concurrency is managed and synchronized.
+
+**_Notes:_**
+* Q3: Show examples of that being the case
