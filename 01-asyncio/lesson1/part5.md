@@ -32,3 +32,8 @@ async def main():
 1. Why do we use await `asyncio.sleep(0.0000001)` ?
 2. Do the coroutines `create_file` run efficiently in terms of I\O bounds? Explain.
 3. Improve the code to deal with the previous problem.
+
+**_Notes:_**
+* Why do questions 1 and 2 not have an answer somewhere in the project
+* Why not sleep(0)?
+* IDK if this is the best example of using asyncio, I didn't test it but as far as I know using asyncio here just makes the code slower, the File object is not async friendly
