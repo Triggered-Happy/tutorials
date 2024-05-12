@@ -70,4 +70,5 @@ sched.run()
 2. Try changing the code to overcome the previous issue.
 
 **_Notes:_**
-* I'm assuming this is based on an youtube video from an old pycon that explained how to implement your own asyncio event loop, if not I implore you to [look](https://www.youtube.com/watch?v=Y4Gt3Xjd7G8) at it
+* I'm assuming this is based on an youtube video from an old pycon that explained how to implement your own asyncio event loop, if not I implore you to [look](https://www.youtube.com/watch?v=Y4Gt3Xjd7G8) at it.
+* IDK how much of this exercise is doable alone by someone who has no prior knowladge of how a possible event loop implimention might look like. 
