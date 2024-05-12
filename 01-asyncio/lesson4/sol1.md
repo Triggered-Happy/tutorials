@@ -9,3 +9,7 @@ A2: No, once a Future object is done (i.e., the represented process has finished
 Q3: What is the significance of the distinction between a Coroutine and a Future in asyncio?
 
 A3: The distinction is important. A Coroutine's code is not executed until it is awaited, allowing you to control when it runs. In contrast, a Future represents something that is already executing or ongoing, and it allows your code to wait for its completion, check its status, and retrieve its result. Understanding this difference is crucial when working with asynchronous code in asyncio.
+
+**_Notes:**
+* A3 - What? Based on my previous assumption that you are confusing between Task and Coroutine this is just completly wrong and even if that assumption is worng then this answer is lacking.
+* A1 - Opaquely worded, especially the last sentance. Shares the same problem as A3 that was mentioned above.
