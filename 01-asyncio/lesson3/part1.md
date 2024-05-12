@@ -115,3 +115,6 @@ Task job id=b13fecc3-5632-4abb-acf6-ef9c43afebc3: WorkTaskResult(id=UUID('ca5843
 Task job id=b13fecc3-5632-4abb-acf6-ef9c43afebc3: WorkTaskResult(id=UUID('8ab4ef54-9706-4cae-a36b-d15c93edabf8'), number=0, exec=<function sleep at 0x0000020D6C2AD940>, time_secs=0.8701545)
 Job b13fecc3-5632-4abb-acf6-ef9c43afebc3 completed: {'elapsed_secs': 0.8731075}
 ```
+
+**_Notes:_**
+* I feel like the new people will be kinda lost trying to do this exercise, it assumes a lot of pre existing knowladge and in my opinion doesn't offer anything in the form of guidance, the code signatures are only usable for people who have done something like this in the past.
