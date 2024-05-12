@@ -51,3 +51,6 @@ async def main() -> None:
 asyncio.run(main())
 
 ```
+
+**_Notes:_**
+* IDK how but you managed to pick one of the worse problems to tackle with async code. One of the most important distinctions to teach people that are just being introduced into the world of concurrency is when to use async, threading, or multiprocessing, this not only fails to do so but points them at the wrong direction.
